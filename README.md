@@ -1,4 +1,4 @@
-**Platform Engineer Role Task**
+##Platform Engineer Role Task##
 
 You’re tasked with setting up basic infrastructure for a new internal tool on Azure. Your goal is to provision a minimal, secure, and well-documented environment using Terraform.
 
@@ -26,8 +26,8 @@ Prerequisites
 
 Steps:
 
-git clone ##insert repo url
-git branch ##insert branch name
+git clone #insert repo url
+git branch #insert branch name
 
 **Running direct from local machine:**
 # Initialize Terraform
