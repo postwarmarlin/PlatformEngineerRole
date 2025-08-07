@@ -26,47 +26,47 @@ Prerequisites
 
 Steps:
 
-git clone **insert repo url**
-git branch **insert branch name**
+- git clone **InsertRepoUrl**
+- git branch **InsertBranchName**
 
 **Running direct from local machine:**
-##Initialize Terraform:
+
+- Initialize Terraform:
 terraform init
-##Run Plan to preview and confirm resources to be created
-terraform plan
-##Apply the configuration
-terraform apply
+Run Plan to preview and confirm resources to be created
+- terraform plan
+Apply the configuration
+- terraform apply
 
 **Running from Pipeline (ideal preferred method)**
 
 **Once finished editing to confirm resources**
-terraform plan 
-**push to repo**
-git init
-git add .
-git commit -m "Initial commit: Azure Web App with Docker via Terraform"
-git push
-**Once added to repo create pull request to pull changes into main branch. **
+- terraform plan 
+- git init
+- git add .
+- git commit -m "Initial commit: Azure Web App with Docker via Terraform"
+- git push
 
-Then run from YAML pipeline
+**Once added to repo create pull request to pull changes into main branch.**
+- Then run from YAML pipeline
 
 ---
 
-Design Decisions
-Linux App Service Plan is used since they are easier to run from Docker Containers, along with this the docker container provides flexibility for the packing proccess.
-Clear definitions of each of the variables provides a clear understanding and future-proofing of the code.
-Naming structure provides clear indication of 'location-environment-application/resource-number'. Making the infrastructure clear what each resource is used for and for monitoring:
-'uks-dv-congroup-01-rg'
-uks: UK South
-dv: Development
-congroup: would be replaced with application name etc
-01: First resource, second rg in dev would be 02 etc
-rg: used to define that this is a resource group
+**Design Decisions**
+- Linux App Service Plan is used since they are easier to run from Docker Containers, along with this the docker container provides flexibility for the packing proccess.
+- Clear definitions of each of the variables provides a clear understanding and future-proofing of the code.
+- Naming structure provides clear indication of 'location-environment-application/resource-number'. Making the infrastructure clear what each resource is used for and for monitoring:
+  **'uks-dv-congroup-01-rg'**
+  - uks: UK South
+  - dv: Development
+  - congroup: would be replaced with application name etc
+  - 01: First resource, second rg in dev would be 02 etc
+  - rg: used to define that this is a resource group
 
 ---
 
 Potential Next Steps
 - CI/CD pipelines or Azure DevOps for automated deployments updates and maintaining deployments. Reducing manual errors and faster, more repetable deployments/upgrades.
 - Monitoring & Logging using Azure Monitor or Application Insights, to gain visibility into application health, performance, and failure points.
-- Add security and identity intergration such as, authentication methods & managed identities. In order to protect the application and its users with secure access methods
-- Various configuration management methods such as Key vaults to store environment variables, and application settings securely and at scale
+- Add security and identity intergration such as, authentication methods & managed identities. In order to protect the application and its users with secure access methods.
+- Various configuration management methods such as Key vaults to store environment variables, and application settings securely and at scale.
