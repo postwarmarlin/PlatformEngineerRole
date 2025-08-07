@@ -3,7 +3,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "=>4.30.0"
+      version = "=> 4.30.0"
     }
   }
 }
@@ -32,7 +32,7 @@ resource "azurerm_linux_web_app" "uksdvwebapp01" {
   name                = var.web_app_name
   location            = azurerm_resource_group.uks-dv-congroup-01-rg.location
   resource_group_name = azurerm_resource_group.uks-dv-congroup-01-rg.name
-  service_plan_id     = azurerm_app_service_plan.app_service_plan.id
+  service_plan_id     = azurerm_app_service_plan.uksdvasp01.id
 
   site_config {
     application_stack {
